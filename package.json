@@ -1,7 +1,7 @@
 {
-  "name": "1003",
+  "name": "animais-fantasticos",
   "version": "1.0.0",
-  "description": "",
+  "description": "Origamid Project",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
