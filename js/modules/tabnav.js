@@ -10,7 +10,7 @@ export default class initTabNav {
     this.tabContent.forEach((section) => {
       section.classList.remove(this.activeClass);
     });
-    const direcao = this.abContent[index].dataset.anime;
+    const direcao = this.tabContent[index].dataset.anime;
     this.tabContent[index].classList.add(this.activeClass, direcao);
   }
 
