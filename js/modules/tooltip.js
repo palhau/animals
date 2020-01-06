@@ -19,10 +19,10 @@ export default class Tooltip {
   }
 
   // removes the tooltip from events, mousemove and mouseleave
-  onMouseLeave(event) {
+  onMouseLeave({ currentTarget }) {
     this.tooltipBox.remove();
-    event.currentTarget.removeEventListener('mouseleave', this.onMouseLeave);
-    event.currentTarget.removeEventListener('mousemove', this.onMouseMove);
+    currentTarget.removeEventListener('mouseleave', this.onMouseLeave);
+    currentTarget.removeEventListener('mousemove', this.onMouseMove);
   }
 
   // creates the tooltip box e puts on the body
@@ -36,12 +36,11 @@ export default class Tooltip {
   }
 
   // creates de tooltip and adds new evente in mousemove and mouseleave to the target
-  onMouseOver(event) {
+  onMouseOver({ currentTarget }) {
     // creates the tooltip box and puts on a propertie
-    this.criarTooltipBox(event.currentTarget);
-
-    event.currentTarget('mousemove', this.onMouseMove);
-    event.currentTarget('mouseleave', this.onMouseLeave);
+    this.criarTooltipBox(currentTarget);
+    currentTarget.addEventListener('mousemove', this.onMouseMove);
+    currentTarget.addEventListener('mouseleave', this.onMouseLeave);
   }
 
   // add events of mouseover for each tooltip
