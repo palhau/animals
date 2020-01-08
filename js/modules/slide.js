@@ -1,3 +1,4 @@
+// eslint-disable-next-line max-classes-per-file
 import debounce from './debounce.js';
 
 export class Slide {
